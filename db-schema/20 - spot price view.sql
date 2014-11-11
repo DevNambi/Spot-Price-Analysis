@@ -9,7 +9,8 @@ select
 	h.Region
 	,h.AZ
 	--,h.PriceDate
-	,PriceDate = dateadd(hh,r.TimeZoneOffset,h.PriceDate) 
+	,PriceDate = dateadd(hh,r.TimeZoneOffset,h.PriceDate)
+	,PriceHour = h.PriceHour
 	,h.InstanceCode
 	,i.InstanceCategory
 	,h.Price

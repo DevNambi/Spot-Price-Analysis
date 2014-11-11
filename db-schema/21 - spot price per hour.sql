@@ -17,10 +17,7 @@ select
 						WHEN HddInGb > 0 then 'HDD'
 						ELSE 'None' END
 	,StorageInGB
-	,PriceHour = dateadd(hh
-					,datepart(hh,PriceDate)
-					,convert(datetime,convert(varchar,PriceDate,101))
-					)
+	,PriceHour = i.PriceHour
 	,IsWeekday
 	,IsBusinessHours
 	,Price = max(Price)
@@ -36,10 +33,7 @@ select
 							else max(Price) * 1.0 / SsdInGb end
 from SpotPriceInfo i
 inner join dbo.Dates d
-on d.StartTime = dateadd(hh
-					,datepart(hh,PriceDate)
-					,convert(datetime,convert(varchar,PriceDate,101))
-					)
+on d.StartTime = i.PriceHour
 group by Region
 	,AZ
 	,InstanceCode
@@ -54,7 +48,4 @@ group by Region
 						ELSE 'None' END
 	,IsWeekday
 	,IsBusinessHours
-	,dateadd(hh
-			,datepart(hh,PriceDate)
-			,convert(datetime,convert(varchar,PriceDate,101))
-			)
+	,i.PriceHour

@@ -136,7 +136,3 @@ ADD CONSTRAINT SpotPriceHistoryPK primary key clustered
 ,AZ
 ,InstanceCode)
 go
-
-create nonclustered columnstore index colstore
-on dbo.SpotPriceHistory (Region, AZ, PriceDate, InstanceCode, Price)
-go
