@@ -1,9 +1,9 @@
 Spot-Price-Analysis
 ===================
 
-As you're undoubtedly aware, Amazon Web Services allows you to *bid* on EC2 instances. If your maximum bid is more than the current bid price, you keep your instance. If you don't, it gets taken away from you.
+Amazon Web Services allows you to *bid* for computing capacity (EC2 VMs). If your maximum bid is more than the current bid price, you keep your instance. If your maximum bid is *less* than the current bid price, then your machine is taken away from you.
 
-The advantage is that the bid prices are often far, far cheaper than the usual on-demand price.
+The advantage is that the bid prices are often far, far cheaper than the usual on-demand price. 80-90% discounts are pretty common.
 
 Here's a quick example of bid vs. on-demand prices for some commonly-used AWS instance types in the us-east-1 (Northern Virginia) region:
 
@@ -42,6 +42,6 @@ If you're here, chances are you know about AWS spot instances. There's a few fun
 * Which are the cheapest regions?
 	* How about AZs? How much does AZ choice matter?
 * What days and times of day matter? What patterns exist?
-* What are bad deals? Are GPU instances as bad as they claim?
+* What are bad deals? Are GPU instances as bad as feared because of Bitcoin miners?
 * What are the gaps in the analysis
 	* Not clear how many instances exist of each type, especially for the specialized ones.
