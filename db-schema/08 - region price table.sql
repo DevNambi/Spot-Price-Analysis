@@ -10,3 +10,11 @@ create table dbo.RegionPrice
 ,constraint RegionPricePK primary key clustered (Region, InstanceCode)
 )
 go
+
+/*
+
+select distinct Region, InstanceCode
+from dbo.SpotPriceHistory
+order by Region, InstanceCode
+
+*/

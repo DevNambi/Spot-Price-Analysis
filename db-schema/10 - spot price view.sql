@@ -11,6 +11,7 @@ select
 	--,h.PriceDate
 	,PriceDate = dateadd(hh,r.TimeZoneOffset,h.PriceDate) 
 	,h.InstanceCode
+	,i.InstanceCategory
 	,h.Price
 	,OnDemandPrice = rp.OnDemandPrice
 	,i.ComputeUnits
@@ -23,6 +24,6 @@ inner join dbo.Region r
 on r.Region = h.Region
 inner join dbo.InstanceType i
 on i.InstanceCode = h.InstanceCode
-left outer join dbo.RegionPrice rp
+inner join dbo.RegionPrice rp
 on rp.Region = h.Region
 and rp.InstanceCode = h.InstanceCode
