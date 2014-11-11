@@ -15,7 +15,6 @@ create table dbo.InstanceType
 ,NetworkPerfDesc varchar(256)
 ,MaxIPs smallint
 ,InstanceCode varchar(20)
-,PricePerHour money
 ,constraint InstanceTypePK primary key clustered (InstanceCode)
 )
 go

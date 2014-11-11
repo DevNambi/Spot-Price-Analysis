@@ -14,3 +14,7 @@ DATAFILETYPE='char'
 ,TABLOCK
 ,FIRSTROW=2
 )
+GO
+
+UPDATE dbo.InstanceType
+SET NetworkPerfDesc = REPLACE(NetworkPerfDesc,'á','')
