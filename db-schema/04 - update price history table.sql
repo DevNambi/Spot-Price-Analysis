@@ -1,6 +1,7 @@
 use SpotAnalysis
 go
 
+-- add a PriceHour value to the fact table. This is a derived time, with just the date and hour, including offset.
 ALTER TABLE [dbo].[SpotPriceHistory]
 ADD PriceHour datetime null
 GO
@@ -19,7 +20,3 @@ GO
 ALTER TABLE [dbo].[SpotPriceHistory]
 ALTER COLUMN PriceHour datetime not null
 GO
-
-create nonclustered columnstore index colstore
-on dbo.SpotPriceHistory (Region, AZ, PriceDate, InstanceCode, Price, PriceHour)
-go

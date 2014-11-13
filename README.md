@@ -1,9 +1,9 @@
 Spot-Price-Analysis
 ===================
 
-Amazon Web Services allows you to *bid* for computing capacity (EC2 VMs). If your maximum bid is more than the current bid price, you keep your instance. If your maximum bid is *less* than the current bid price, then your machine is taken away from you.
+Amazon Web Services allows you to *bid* for computing capacity (EC2 VMs). If your maximum bid is more than the current bid price, you keep your instance. If your maximum bid is *less* than the current bid price, then your VM is destroyed.
 
-The advantage is that the bid prices are often far, far cheaper than the usual on-demand price. 80-90% discounts are pretty common.
+The advantage is that the bid prices are far cheaper than the usual on-demand price. 70-90% discounts are common.
 
 Here's a quick example of bid vs. on-demand prices for some commonly-used AWS instance types in the us-east-1 (Northern Virginia) region:
 
@@ -27,6 +27,39 @@ If you're here, chances are you know about AWS spot instances. There's a few fun
 * Not all AZs are the same price. This is a bit insane, considering that 
 
 
+
+## Part 1: An overview
+
+* Explain what spot instances are. Link to YouTube videos.
+* Go over high-level discounts. Then discounts per region. Per AZ. Per time of day. Per biz hour / weekday.
+* Mention that the field of research here is bidding, agent-based systems. 
+* Quant finance is a resource to learn more
+* Cost to run per day assuming an infinite bid.
+
+## Part 2: Comparison with other cloud providers
+
+* Azure
+* GCE
+* Figure out CPU per scaling factor for each
+
+## Part 3: Predictions
+
+* Show the results, not the algo
+* Algos to look at: logistic regression, others. Depends on pricing strategy
+* When do price spikes happen? Can they be predicted?
+	* Do price spikes happen across AZs? Regions? Instance types?
+	* 'Spike' defined as above some threshold, IQR, absolute value.
+* For a given price, X, how many hours will it last for each instance type?
+	* Split per AZ, per region
+	* Split by biz hour, weekday
+
+## Part 4: Strategy and Uses
+
+* Public good. Science. 
+* Offer to share
+* 
+
+
 ### Questions to Explore
 
 * how much does the price vary per instance? Inter-quartile range? 
@@ -45,3 +78,7 @@ If you're here, chances are you know about AWS spot instances. There's a few fun
 * What are bad deals? Are GPU instances as bad as feared because of Bitcoin miners?
 * What are the gaps in the analysis
 	* Not clear how many instances exist of each type, especially for the specialized ones.
+
+
+
+
