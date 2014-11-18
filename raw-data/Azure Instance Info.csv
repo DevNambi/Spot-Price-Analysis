@@ -1,0 +1,39 @@
+Name, Memory , EC2Units ,Compute Units,HDDInGB,SSDInGB,Storage,Architecture,NetworkPerf,MaxIPs,InstanceCode,InstanceCategory
+A0 Basic,1,0.5,Burstable,0,0,0 GB (EBS only),64-bit,Low to Moderate,4,t2.micro,General Purpose
+A1 Basic,0.6,0.25,Burstable,0,0,0 GB (EBS only),32/64-bit,Very Low,4,t1.micro,General Purpose
+A2 Basic,2,0.75,Burstable,0,0,0 GB (EBS only),64-bit,Low to Moderate,8,t2.small,General Purpose
+A3 Basic,1.7,1,1 (1 core x 1 unit),160,0,160 GB,32/64-bit,Low,8,m1.small,General Purpose
+A4 Basic,4,1,Burstable,0,0,0 GB (EBS only),64-bit,Low to Moderate,18,t2.medium,General Purpose
+A0 Basic,3.75,3,3 (1 core x 3 unit),0,4,4 GB SSD,64-bit,Moderate,12,m3.medium,General Purpose
+A1 Basic,3.75,2,2 (1 core x 2 unit),410,0,410 GB,32/64-bit,Moderate,12,m1.medium,General Purpose
+A2 Basic,3.75,7,7 (2 core x 3.5 unit),0,32,32 GB (2 * 16 GB SSD),64-bit,Moderate,30,c3.large,High CPU
+A3 Basic,1.7,5,5 (2 core x 2.5 unit),350,0,350 GB,32/64-bit,Moderate,12,c1.medium,High CPU
+A4 Basic,7.5,6.5,6.5 (2 core x 3.25 unit),0,32,32 GB SSD,64-bit,Moderate,30,m3.large,General Purpose
+,7.5,4,4 (2 core x 2 unit),840,0,840 GB (2 * 420 GB),64-bit,Moderate / 500 Mbps,30,m1.large,General Purpose
+,15.25,6.5,6.5 (2 core x 3.25 unit),0,32,32 GB SSD,64-bit,Moderate,30,r3.large,High Memory
+,7.5,14,14 (4 core x 3.5 unit),0,80,80 GB (2 * 40 GB SSD),64-bit,Moderate / 500 Mbps,60,c3.xlarge,High CPU
+,17.1,6.5,6.5 (2 core x 3.25 unit),420,0,420 GB,64-bit,Moderate,60,m2.xlarge,General Purpose
+,15,13,13 (4 core x 3.25 unit),0,80,80 GB (2 * 40 GB SSD),64-bit,High / 1000 Mbps,60,m3.xlarge,General Purpose
+,15,8,8 (4 core x 2 unit),1680,0,1680 GB (4 * 420 GB),64-bit,High / 1000 Mbps,60,m1.xlarge,General Purpose
+,30.5,13,13 (4 core x 3.25 unit),0,80,80 GB SSD,64-bit,Moderate / 500 Mbps,60,r3.xlarge,High Memory
+,15,28,28 (8 core x 3.5 unit),0,160,160 GB (2 * 80 GB SSD),64-bit,High / 1000 Mbps,60,c3.2xlarge,High CPU
+,34.2,13,13 (4 core x 3.25 unit),850,0,850 GB,64-bit,Moderate / 500 Mbps,120,m2.2xlarge,General Purpose
+,7,20,20 (8 core x 2.5 unit),1680,0,1680 GB (4 * 420 GB),64-bit,High / 1000 Mbps,60,c1.xlarge,High CPU
+,30,26,26 (8 core x 3.25 unit),0,160,160 GB (2 * 80 GB SSD),64-bit,High / 1000 Mbps,120,m3.2xlarge,General Purpose
+,15,26,26 (8 core x 3.25 unit),0,60,60 GB SSD,64-bit,High / 1000 Mbps,60,g2.2xlarge,Special Purpose
+,61,26,26 (8 core x 3.25 unit),0,160,160 GB SSD,64-bit,High / 1000 Mbps,60,r3.2xlarge,High Memory
+,30,55,55 (16 core x 3.4375 unit),0,320,320 GB (2 * 160 GB SSD),64-bit,High / 1000 Mbps,240,c3.4xlarge,High CPU
+,30.5,14,14 (4 core x 3.5 unit),0,800,800 GB SSD,64-bit,Moderate / 500 Mbps,60,i2.xlarge,High Storage
+,68.4,26,26 (8 core x 3.25 unit),1680,0,1680 GB (2 * 840 GB),64-bit,High / 1000 Mbps,240,m2.4xlarge,General Purpose
+,122,52,52 (16 core x 3.25 unit),0,320,320 GB SSD,64-bit,High / 1000 Mbps,240,r3.4xlarge,High Memory
+,60,108,108 (32 core x 3.375 unit),0,640,640 GB (2 * 320 GB SSD),64-bit,10 Gigabit,240,c3.8xlarge,High CPU
+,61,27,27 (8 core x 3.375 unit),0,1600,1600 GB (2 * 800 GB SSD),64-bit,High / 1000 Mbps,60,i2.2xlarge,High Storage
+,60.5,88,88 (2 x Xeon E5-2670),3360,0,3360 GB (4 * 840 GB),64-bit,10 Gigabit,240,cc2.8xlarge,Special Purpose
+,22.5,33.5,33.5 (2 x Xeon X5570),1680,0,1680 GB (2 * 840 GB),64-bit,10 Gigabit,240,cg1.4xlarge,Special Purpose
+,244,104,104 (32 core x 3.25 unit),0,640,640 GB (2 * 320 GB SSD),64-bit,10 Gigabit,240,r3.8xlarge,High Memory
+,60.5,35,35 (2 x Xeon E5-2650),0,2048,2048 GB (2 * 1024 GB SSD),64-bit,10 Gigabit,240,hi1.4xlarge,High Storage
+,122,53,53 (16 core x 3.3125 unit),0,3200,3200 GB (4 * 800 GB SSD),64-bit,High / 1000 Mbps,240,i2.4xlarge,High Storage
+,244,88,88 (2 x Xeon E5-2670),0,240,240 GB (2 * 120 GB SSD),64-bit,10 Gigabit,240,cr1.8xlarge,Special Purpose
+,117,35,35 (2 x Xeon E5-2650),49152,0,49152 GB (24 * 2048 GB),64-bit,10 Gigabit,240,hs1.8xlarge,High Storage
+,244,104,104 (32 core x 3.25 unit),0,6400,6400 GB (8 * 800 GB SSD),64-bit,10 Gigabit,240,i2.8xlarge,High Storage
+,23,16,16 (8 core x 2 unit),1680,0,1680 GB (2 * 840 GB),,10 Gigabit,60,cc1.4xlarge,Special Purpose
