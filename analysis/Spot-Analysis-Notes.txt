@@ -1,0 +1,28 @@
+# Python Resources
+
+**Statsmodels**
+
+http://statsmodels.sourceforge.net/stable/tsa.html
+http://stats.stackexchange.com/questions/72376/arima-with-seasonality-in-statsmodels
+http://stats.stackexchange.com/questions/117953/very-high-frequency-time-series-analysis-seconds-and-forecasting-python-r
+http://stackoverflow.com/questions/22770352/auto-arima-equivalent-for-python
+http://earthpy.org/pandas-basics.html
+http://pandas.pydata.org/pandas-docs/stable/timeseries.html
+http://blog.yhathq.com/posts/aggregating-and-plotting-time-series-in-python.html
+https://conference.scipy.org/scipy2011/slides/mckinney_time_series.pdf
+
+
+### Questions
+
+* For each instance type, do spot prices correlate:
+    * Across AZs in the same region?
+    * Across regions?
+    * By UTC time of day? For the same AZ or region?
+    * By local time of day? For the same AZ or region?
+* For each instance type in a single AZ/region, do discounts correlate
+    * By instance category?
+    * By instance family?
+    * By feature (memory, CPU, SSD, GPU presence)
+    * To any other instances?
+* Are prices historically stable in an AZ or region?
+    * What factors correlate with price increases in the next 24 hours? Prices in a different AZ? Price increases for other instances?
