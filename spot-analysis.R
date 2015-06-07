@@ -1,5 +1,8 @@
 library(ggplot2)
 library(stats)
+library(forecast)
+library(zoo)
+
 
 
 theme_clean <- theme(
@@ -11,48 +14,48 @@ theme_clean <- theme(
 )
 theme_set(theme_bw())
 
-setwd('Documents/Spot-Price-Analysis/raw-data/')
-prices.df <- read.csv("us-west-2_history.csv", header = FALSE)
+setwd('C:/Users/fractals.000/Documents/GitHub/Spot-Price-Analysis/clean-data')
+prices.df <- read.csv("Price.csv", header = FALSE)
 
 str(prices.df)
-names(prices.df) <- c('region','az','time','instance','price')
+names(prices.df) <- c('region','az','time','instance','category','spotprice','demandprice','compute','memory','hdd','ssd','storage')
+#prices.df$time <- as.Date(prices.df$time)
+prices.df$time2 <- strptime(x=prices.df$time, "%Y-%m-%d %H:%M:%OS")
+
 summary(prices.df)
 
 
-#Order of operations
-# 1) Look at the data visually
-# 2) Look at the correlations. Make sure to use non-normal correlations. Use qqplots to look for data distribution
-# 3) Identify correlations to investigate further
-# 4) Random forest. Use it to predict the data.
-#Histograms, KDEs of various columns
-
-general_instances <- c('t1.micro',)
-cpu_instances <- c()
-ram_instances <- c('r3.2xlarge','r3.4xlarge','r3.8xlarge','r3.large','r3.xlarge')
-special_instances <- c()
-
-qplot(price, instance, data=prices.df, geom=c('boxplot', 'jitter'),
-      main="Price Per Instance", xlab="Dollars Per Hour", ylab="Instance Type", alpha=I(0.2))
-
-qplot(price, instance, data=subset(prices.df,instance %in% ram_instances),
-      geom=c('boxplot', 'jitter'),
-      main="Price Per Instance", xlab="Dollars Per Hour", ylab="Instance Type", alpha=I(0.2))
-
-qplot(instance, price, data=subset(prices.df,instance %in% ram_instances),
-      geom=c('boxplot', 'jitter'),
-      main="Price Per Instance", ylab="Dollars Per Hour", xlab="Instance Type", alpha=I(0.2))
-
-qplot(x=c(''), y=price, data=subset(prices.df,instance %in% ram_instances),
-      facets=instance~az, size=I(3),
-      main="Price Per Instance", ylab="Dollars Per Hour", xlab="Instance Type", alpha=I(0.2))
-
-qplot()
-
-qplot(hp, mpg, data=mtcars, shape=am, color=am, 
-      facets=gear~cyl, size=I(3),
-      xlab="Horsepower", ylab="Miles per Gallon") 
+# See which instance has the most variation
+prices.df$discount <- prices.df$spotprice / prices.df$demandprice
+qplot(y=instance, x=discount, data=prices.df, alpha=I(0.1))
+qplot(y=instance, x=discount, data=prices.df, geom=c('boxplot'))
 
 
+# First, pick just a single region
+rm(prices.1.df)
+rm(prices.2.df)
+rm(prices.3.df)
+
+
+prices.1.df <- prices.df[prices.df$az %in% c('us-west-2b'), ]
+# prices.1.df$time2
+
+prices.2.df <- prices.1.df[prices.1.df$instance %in% c('m2.4xlarge'), ]
+# prices.2.df$time2
+
+prices.3.df <- unique(prices.2.df)
+# prices.3.df$time2
+# index(prices.3.df$time2)
+
+  
+  
+# Convert the data frame to be a time series
+prices.region.zoo <- zoo(prices.3.df$spotprice, order.by=prices.3.df$time2)
+region.fit <- auto.arima(prices.region.zoo)
+# 
+
+#plot(region.fit)
+summary(region.fit)
 
 
 
