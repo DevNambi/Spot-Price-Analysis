@@ -1,18 +1,6 @@
-# Python Resources
+# Notes
 
-**Statsmodels**
-
-http://statsmodels.sourceforge.net/stable/tsa.html
-http://stats.stackexchange.com/questions/72376/arima-with-seasonality-in-statsmodels
-http://stats.stackexchange.com/questions/117953/very-high-frequency-time-series-analysis-seconds-and-forecasting-python-r
-http://stackoverflow.com/questions/22770352/auto-arima-equivalent-for-python
-http://earthpy.org/pandas-basics.html
-http://pandas.pydata.org/pandas-docs/stable/timeseries.html
-http://blog.yhathq.com/posts/aggregating-and-plotting-time-series-in-python.html
-https://conference.scipy.org/scipy2011/slides/mckinney_time_series.pdf
-
-
-### Questions
+### General Approach
 
 * For each instance type, do spot prices correlate:
     * Across AZs in the same region?
@@ -26,3 +14,37 @@ https://conference.scipy.org/scipy2011/slides/mckinney_time_series.pdf
     * To any other instances?
 * Are prices historically stable in an AZ or region?
     * What factors correlate with price increases in the next 24 hours? Prices in a different AZ? Price increases for other instances?
+
+
+### R Resources
+
+* ARIMA - turns out the closest approach is random-walk mean reverting. Unfortunately. So there's no real pattern.
+* Make confusion matrix - each instance and the instances with more resources in each.
+* 
+
+
+* Next Questions - ccf for cross-time series correlations
+
+
+**Lower-Priority Questions**
+
+* 
+
+
+
+
+
+
+### Python Resources
+
+**Statsmodels**
+
+http://statsmodels.sourceforge.net/stable/tsa.html
+http://stats.stackexchange.com/questions/72376/arima-with-seasonality-in-statsmodels
+http://stats.stackexchange.com/questions/117953/very-high-frequency-time-series-analysis-seconds-and-forecasting-python-r
+http://stackoverflow.com/questions/22770352/auto-arima-equivalent-for-python
+http://earthpy.org/pandas-basics.html
+http://pandas.pydata.org/pandas-docs/stable/timeseries.html
+http://blog.yhathq.com/posts/aggregating-and-plotting-time-series-in-python.html
+https://conference.scipy.org/scipy2011/slides/mckinney_time_series.pdf
+

@@ -2,6 +2,7 @@ library(ggplot2)
 library(stats)
 library(forecast)
 library(zoo)
+library(dplyr)
 
 
 
@@ -14,12 +15,14 @@ theme_clean <- theme(
 )
 theme_set(theme_bw())
 
-setwd('C:/Users/fractals.000/Documents/GitHub/Spot-Price-Analysis/clean-data')
+#setwd('C:/Users/fractals.000/Documents/GitHub/Spot-Price-Analysis/clean-data')
+setwd('/Users/devnambi/Documents/GitHub/Spot-Price-Analysis/clean-data/')
 prices.df <- read.csv("Price.csv", header = FALSE)
 
 str(prices.df)
 names(prices.df) <- c('region','az','time','instance','category','spotprice','demandprice','compute','memory','hdd','ssd','storage')
 #prices.df$time <- as.Date(prices.df$time)
+str(prices.df)
 prices.df$time2 <- strptime(x=prices.df$time, "%Y-%m-%d %H:%M:%OS")
 
 summary(prices.df)
