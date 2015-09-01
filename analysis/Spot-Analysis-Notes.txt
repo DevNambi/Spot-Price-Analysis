@@ -28,8 +28,7 @@
 
 **Lower-Priority Questions**
 
-* 
-
+* https://aws.amazon.com/blogs/aws/building-price-aware-applications-using-ec2-spot-instances/
 
 
 
